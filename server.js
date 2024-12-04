@@ -1,7 +1,8 @@
-import express from "express";
+import express from 'express';
 import cors from "cors";
 import connectDB from "./config/db.js";
 import classRoute from "./routes/classRoute.js";
+import studentRoute from "./routes/studentRoute.js";
 import dotenv from "dotenv";
 
 // Initialize dotenv to load environment variables
@@ -28,12 +29,13 @@ app.get("/", (req, res) => {
 
 
 app.use("/api/class", classRoute);
+app.use("/api/students", studentRoute);
 
 //connectDB
 connectDB();
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 4002;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

@@ -1,4 +1,4 @@
-import classModel from "../models/classModel.js";
+import classModel from '../models/classModel.js';
 
 export const createClass = async (req, res) => {
   const { className, roomNumber} = req.body;
